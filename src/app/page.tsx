@@ -1,9 +1,16 @@
-import Image from 'next/image';
+'use client';
 import { Inter } from 'next/font/google';
-import styles from './page.module.css';
+import { Footer, Navbar} from './components';
+import { Main } from './blog/main';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
-  return <h1 className="text-7xl text-red-500 text-center">MainPage</h1>;
+  return (
+    <body>
+      <Navbar />
+      <Main details={'some text'} />
+      <Footer />
+    </body>
+  );
 }

@@ -11,7 +11,8 @@ export const Main = ({ details }: any) => {
   // NOTE: details_form_form will we used later to replace details dynamically.
   const details_from_form = details;
   return (
-    <div className="blog_body p-4 border-4 border-solid border-green-400 backdrop-blur-xl bg-white/30">
+    <div className="p-4 border-4 border-solid border-green-400 ">
+      {/**Add following for image OR blur-effect "backdrop-blur-xl bg-white/30 blog_body" */}
       {/* Navbar Section */}
       <Navbar />
       {/* Hero Section */}

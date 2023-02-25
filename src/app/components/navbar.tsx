@@ -1,3 +1,123 @@
+import { useState } from 'react';
+import MenuIcon from './file.png';
+import CloseIcon from './cross.png';
+import Image from 'next/image';
+
+export const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  return (
+    <div className="flex flex-row border-4 border-solid rounded-lg justify-between  border-red-500 mx-auto sm:mx-4 lg:mx-16 h-full p-1">
+      <div className="flex justify-center items-center w-full text-center ">
+        <a href="/" className="flex items-center w-4/5">
+          <span className="text-xl font-bold w-full text-green-400 ">
+            Mayank's Travel Blog
+          </span>
+        </a>
+
+        <div className="hidden md:flex space-x-4 items-center justify-between mx-2 mt-1">
+          <a
+            href="/"
+            className="block text-purple-400 text-lg hover:text-white mb-2 "
+          >
+            Home
+          </a>
+          <a
+            href="/"
+            className="block text-purple-400 text-lg hover:text-white mb-2"
+          >
+            Latest
+          </a>
+          <a
+            href="/"
+            className="block text-purple-400 text-lg hover:text-white mb-2"
+          >
+            Stories
+          </a>
+          <a
+            href="/"
+            className="block text-purple-400 text-lg hover:text-white mb-2"
+          >
+            Gallery
+          </a>
+          <a
+            href="/"
+            className="block text-purple-400 text-lg hover:text-white mb-2"
+          >
+            Contact
+          </a>
+        </div>
+
+        <div className="md:hidden relative flex items-center">
+          <button
+            type="button"
+            className="text-gray-400 hover:text-white focus:outline-none focus:text-white"
+            aria-label="Toggle menu"
+            onClick={toggleMobileMenu}
+          >
+            {isMobileMenuOpen ? (
+              <Image
+                src={CloseIcon}
+                alt="Close menu"
+                className="w-6 h-6 fixed"
+              />
+            ) : (
+              <Image src={MenuIcon} alt="Open menu" className="w-6 h-6 " />
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      {isMobileMenuOpen && (
+        <div className="flex flex-col justify-center md:hidden fixed lg:relative bg-green-300  -top-0 -right-0 w-full h-full items-center">
+          <a
+            title="cross"
+            href="/"
+            className="block text-blue-700 hover:text-white mb-2 items-center"
+          >
+            <Image src={CloseIcon} alt="Close menu" className="w-6 h-6" />
+          </a>
+          <a
+            href="/"
+            className="block text-purple-700 text-lg hover:text-white mb-2"
+          >
+            Home
+          </a>
+          <a
+            href="/"
+            className="block text-purple-700 text-lg hover:text-white mb-2"
+          >
+            Latest
+          </a>
+          <a
+            href="/"
+            className="block text-purple-700 text-lg hover:text-white mb-2"
+          >
+            Stories
+          </a>
+          <a
+            href="/"
+            className="block text-purple-700 text-lg hover:text-white mb-2"
+          >
+            Gallery
+          </a>
+          <a
+            href="/"
+            className="block text-purple-700 text-lg hover:text-white mb-2"
+          >
+            Contact
+          </a>
+        </div>
+      )}
+    </div>
+  );
+};
+
 // // // // export const Navbar = () => {
 // // // //   return (
 // // // //     // <div className="flex flex-row border-4 border-solid rounded-lg justify-between  border-red-500 mx-auto sm:mx-4 lg:mx-16 h-full">
@@ -272,81 +392,3 @@
 // };
 
 // export default Navbar;
-
-import { useState } from 'react';
-import MenuIcon from './file.png';
-import CloseIcon from './cross.png';
-import Image from 'next/image';
-
-export const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  return (
-    <div className="flex flex-row border-4 border-solid rounded-lg justify-between  border-red-500 mx-auto sm:mx-4 lg:mx-16 h-full p-1">
-      <div className="flex justify-center items-center w-full text-center ">
-        <a href="/" className="flex items-center w-4/5">
-          <span className="text-xl font-semibold w-full text-green-400 ">
-            Mayank's Travel Blog
-          </span>
-        </a>
-
-        <div className="hidden md:flex space-x-4 items-center justify-between">
-          <a href="/" className="text-gray-300 hover:text-white">
-            Home
-          </a>
-          <a href="/" className="text-gray-300 hover:text-white">
-            About
-          </a>
-          <a href="/" className="text-gray-300 hover:text-white">
-            Contact
-          </a>
-        </div>
-
-        <div className="md:hidden relative flex items-center">
-          <button
-            type="button"
-            className="text-gray-400 hover:text-white focus:outline-none focus:text-white"
-            aria-label="Toggle menu"
-            onClick={toggleMobileMenu}
-          >
-            {isMobileMenuOpen ? (
-              <Image
-                src={CloseIcon}
-                alt="Close menu"
-                className="w-6 h-6 fixed"
-              />
-            ) : (
-              <Image src={MenuIcon} alt="Open menu" className="w-6 h-6 " />
-            )}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile menu */}
-      {isMobileMenuOpen && (
-        <div className="flex flex-col justify-center md:hidden fixed lg:relative bg-green-300  -top-0 -right-0 w-full h-full items-center">
-          <a
-            title="cross"
-            href="/"
-            className="block text-blue-700 hover:text-white mb-2 items-center"
-          >
-            <Image src={CloseIcon} alt="Close menu" className="w-6 h-6" />
-          </a>
-          <a href="/" className="block text-blue-700 hover:text-white mb-2">
-            Home
-          </a>
-          <a href="/" className="block text-blue-700 hover:text-white mb-2">
-            About
-          </a>
-          <a href="/" className="block text-blue-700 hover:text-white mb-2">
-            Contact
-          </a>
-        </div>
-      )}
-    </div>
-  );
-};

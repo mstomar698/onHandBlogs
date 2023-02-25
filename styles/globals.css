@@ -3,22 +3,10 @@
 @tailwind utilities;
 
 body {
-  /* height: 100%; */
-  /* width: 100%; */
-  margin: 0;
-  padding: 1rem;
-  padding-bottom: 0;
-  background-image: url('../assets/bg-image.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  /* activate scroll bar when page is extended */
   overflow-y: scroll;
   scrollbar-width: thin;
   scrollbar-color: #f40606 #f7d976;
 }
-
 body::-webkit-scrollbar {
   width: 8px;
 }
@@ -36,8 +24,23 @@ body::-webkit-scrollbar-track {
   background-color: #000;
   /* border-radius: 4px; */
 }
+.main_body {
+  /* height: 100%; */
+  /* width: 100%; */
+  margin: 0;
+  padding: 1rem;
+  padding-bottom: 0;
+  background-image: url('../assets/bg-image.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  /* activate scroll bar when page is extended */
+
+}
+
 @media only screen and (max-width: 600px) {
-  body {
+  .main_body {
     background-position: bottom center;
     padding: 1rem;
     padding-bottom: 0;

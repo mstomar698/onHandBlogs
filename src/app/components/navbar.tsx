@@ -39,7 +39,6 @@ export const Navbar = () => {
             Stories
           </a>
           <a
-            href="/"
             className="block text-purple-400 text-lg hover:text-white mb-2"
           >
             Gallery

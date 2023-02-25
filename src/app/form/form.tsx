@@ -14,9 +14,8 @@ export const Form = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     try {
-      const response = await fetch('/form', {
+      const response = await fetch('/api/form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -28,7 +27,8 @@ export const Form = () => {
         throw new Error('Network response was not ok');
       }
 
-      console.log('Form data submitted successfully');
+      const responseData = await response.json();
+      console.log('Form data submitted successfully:', responseData);
     } catch (error) {
       console.error('Error submitting form data:', error);
     }

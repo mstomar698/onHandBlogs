@@ -52,7 +52,7 @@ export const Navbar = () => {
           </a>
         </div>
 
-        <div className="md:hidden relative flex items-center">
+        <div className="md:hidden relative h-full flex items-center">
           <button
             type="button"
             className="text-gray-400 hover:text-white focus:outline-none focus:text-white"
@@ -74,7 +74,7 @@ export const Navbar = () => {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="flex flex-col justify-center md:hidden fixed lg:relative bg-green-300  -top-0 -right-0 w-full h-full items-center">
+        <div className="flex flex-col justify-center md:hidden fixed  lg:relative -top-0 -right-0 w-full h-screen overflow-hidden backdrop-blur-xl bg-black/80 items-center">
           <a
             title="cross"
             href="/"

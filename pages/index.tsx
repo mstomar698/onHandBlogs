@@ -110,7 +110,7 @@ InferGetServerSidePropsType<typeof getServerSideProps>) {
               <Main details={session.user!.email} />
               {/* <Main_Comb details={"hello"} /> */}
               {/* button */}
-              <div className="text-center items-center justify-center w-full ">
+              <div className="text-center items-center my-8 justify-center w-full ">
                 <button
                   onClick={() => {
                     fileDownload();

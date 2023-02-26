@@ -13,7 +13,7 @@ interface FormData {
 }
 
 import humanImage from '../../assets/galaxy-bg.jpg';
-import Default_Blog  from './default_blog/default-blog';
+import Default_Blog from './default_blog/default-blog';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 
@@ -257,7 +257,9 @@ const Main = ({ details }: any) => {
           )}
         </>
       ))}{' '}
-      && (
+      {/* for development purposes only */}
+      {/* && */}
+       (
       <Default_Blog />)
     </>
   );

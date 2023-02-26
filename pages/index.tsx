@@ -5,22 +5,14 @@ import { Main } from './blog/main';
 import { Form } from './form/form';
 import clientPromise from '../lib/mongodb';
 import { InferGetServerSidePropsType } from 'next';
+import FormData from './data/formdata';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export async function getServerSideProps(context: any) {
-  // console.log(context);
   try {
     await clientPromise;
-    // `await clientPromise` will use the default database passed in the MONGODB_URI
-    // However you can use another database (e.g. myDatabase) by replacing the `await clientPromise` with the following code:
-    //
-    // `const client = await clientPromise`
-    // `const db = client.db("myDatabase")`
-    //
-    // Then you can execute queries against your database like so:
-    // db.find({}) or any of the MongoDB Node Driver commands
-
+    console.log('Connected to MongoDB');
     return {
       props: { isConnected: true },
     };
@@ -55,6 +47,11 @@ export default function Home({
             Form for Blog
           </h1>
           <Form />
+
+          {/* <h1 className="text-purple-700 text-3xl my-4 text-center w-full bg-transparent underline font-bold items-center">
+            <FormData />
+          </h1> */}
+
           {/* form-data section here */}
           {/* The review blog is here */}
           <h1 className="text-purple-700 text-3xl my-4 text-center w-full bg-transparent underline font-bold items-center">

@@ -29,6 +29,7 @@ const Main = ({ details }: any) => {
     async function fetchData() {
       const response = await fetch('/api/formData');
       const data = await response.json();
+      console.log(data);
       setFormData(data);
     }
 
@@ -41,11 +42,11 @@ const Main = ({ details }: any) => {
         <>
           {person.email === details_from_form ? (
             <>
-              <h1 className="text-purple-700 text-3xl my-4 text-center w-full bg-transparent underline font-bold items-center">
-                Live Preview
-              </h1>
-              <div className="backdrop-blur-xl bg-white/30 p-4 border-4 border-solid border-green-400 ">
+              <div className="backdrop-blur-xl my-4 bg-white/30 p-4 border-4 border-solid border-green-400 ">
                 {/**Add following for image OR blur-effect "backdrop-blur-xl bg-white/30 blog_main_body" */}
+                <h1 className="text-purple-700 text-3xl my-4 text-center w-full bg-transparent underline font-bold items-center">
+                  {person.name}'s Blog's Live Preview
+                </h1>
                 {/* Navbar Section */}
                 <Navbar person_details={person.name} />
                 {/* Hero Section */}
@@ -75,15 +76,7 @@ const Main = ({ details }: any) => {
                         </div>
                       </div>
                     </div>
-                    {/* <div className="blog_body w-1/5 lg:w-2/5 max-sm:hidden rounded-r-lg"></div> */}
-                    <div
-                      className="w-1/5 lg:w-2/5 max-sm:hidden rounded-r-lg bg-cover relative bg-center bg-black"
-                      style={{
-                        backgroundImage: `url(${humanImage})`,
-                      }}
-                    >
-                      <div></div>
-                    </div>
+                    <div className="blog_body w-1/5 lg:w-2/5 max-sm:hidden rounded-r-lg"></div>
                   </div>
                 </div>
                 {/* Latest Travel Section */}
@@ -249,9 +242,6 @@ const Main = ({ details }: any) => {
             </>
           ) : (
             <>
-              <h1 className="text-purple-700 text-3xl my-4 text-center w-full bg-transparent underline font-bold items-center">
-                Default Blog
-              </h1>
               <Default_Blog />
             </>
           )}
@@ -259,8 +249,8 @@ const Main = ({ details }: any) => {
       ))}{' '}
       {/* for development purposes only */}
       {/* && */}
-       (
-      <Default_Blog />)
+      {/* (
+      <Default_Blog />) */}
     </>
   );
 };

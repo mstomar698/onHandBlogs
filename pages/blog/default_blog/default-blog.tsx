@@ -1,7 +1,7 @@
 import Blog_bg from '../../../assets/galaxy-bg.jpg';
 import Image from 'next/image';
 import ContactForm from '../../components/contact-from';
-import {person} from '../../../static/default-blog-data';
+import { person } from '../../../static/default-blog-data';
 import Footer from '@/pages/components/footer';
 import Navbar from '@/pages/components/navbar';
 
@@ -9,6 +9,9 @@ const Default_Blog = () => {
   return (
     <div className="backdrop-blur-xl bg-white/30  p-4 border-4 border-solid border-red-500 ">
       {/**Add following for image OR blur-effect "backdrop-blur-xl bg-white/30 blog_body" */}
+      <h1 className="text-purple-700 text-3xl my-4 text-center w-full bg-transparent underline font-bold items-center">
+        Default Blog
+      </h1>
       {/* Navbar Section */}
       <Navbar person_details={person.name} />
       {/* Hero Section */}

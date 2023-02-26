@@ -9,42 +9,42 @@ import { person } from '../static/default-blog-data';
 // combined file to download
 // import { Main_Comb } from './blog/to_downlaod/main_compbined';
 // import * as fs from 'fs';
-import fs from 'fs';
-import { transformSync } from '@babel/core';
+// import fs from 'fs';
+// import { transformSync } from '@babel/core';
 import { saveAs } from 'file-saver';
 import textData from '../static/travel_blog';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
 
 const inter = Inter({ subsets: ['latin'] });
-const jsxFilePath = '../blog/to_download/main_combined.tsx';
-const textFilePath = '../blog/to_download/travel_blog.txt';
+// const jsxFilePath = '../blog/to_download/main_combined.tsx';
+// const textFilePath = '../blog/to_download/travel_blog.txt';
 
 export async function getServerSideProps(context: any) {
   try {
     await clientPromise;
     console.log('Connected to MongoDB');
-    const downloadFile = () => {
-      const blob = new Blob(
-        [fs.readFileSync(textFilePath, { encoding: 'utf-8' })],
-        { type: 'text/plain;charset=utf-8' }
-      );
-      saveAs(blob, 'output.txt');
-    };
-    const convertToText = () => {
-      const jsxFileContent = fs.readFileSync(jsxFilePath, {
-        encoding: 'utf-8',
-      });
-      const code = transformSync(jsxFileContent, {
-        presets: ['@babel/preset-react'],
-      });
-      fs.writeFileSync(textFilePath, code as any);
-    };
+    // const downloadFile = () => {
+    //   // const blob = new Blob(
+    //   //   [fs.readFileSync(textFilePath, { encoding: 'utf-8' })],
+    //   //   { type: 'text/plain;charset=utf-8' }
+    //   // );
+    //   // saveAs(blob, 'output.txt');
+    // };
+    // const convertToText = () => {
+    //   // const jsxFileContent = fs.readFileSync(jsxFilePath, {
+    //   //   encoding: 'utf-8',
+    //   // });
+    //   // const code = transformSync(jsxFileContent, {
+    //   //   presets: ['@babel/preset-react'],
+    //   // });
+    //   // fs.writeFileSync(textFilePath, code as any);
+    // };
     return {
       props: {
         isConnected: true,
-        downloadFile: downloadFile(),
-        convertToText: convertToText(),
+        // downloadFile: downloadFile(),
+        // convertToText: convertToText(),
       },
     };
   } catch (e) {
@@ -86,7 +86,7 @@ InferGetServerSidePropsType<typeof getServerSideProps>) {
       <div className="backdrop-blur-xl bg-black/80">
         {!session ? (
           <div className="blog_main_body h-screen w-full">
-            <div className="text-center items-center justify-center m-64 max-md:m-12 max-md:mt-64 max-sm:m-12 max-sm:mt-64 bg-black p-4 border-4 border-solid rounded-lg border-red-500">
+            <div className="text-center items-center justify-center m-44 max-md:m-12 max-md:mt-64 max-sm:m-12 max-sm:mt-64 bg-black p-4 border-4 border-solid rounded-lg border-red-500">
               <h1 className="text-purple-700 text-3xl my-4 text-center w-full bg-transparent font-bold items-center mt-8">
                 Not signed in! 😥
               </h1>

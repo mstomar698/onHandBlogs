@@ -52,8 +52,10 @@ const Form = () => {
           Please fill for options that you want in your blog
         </h1>
         <p className="text-purple-700 text-md mx-4 text-left w-full bg-transparent font-bold items-start">
-          <span className="text-sm text-red-500">NOTE: </span>Empty slots will
-          we filled with defaut values
+          <span className="text-sm text-red-500">NOTE: </span>Sections are
+          divided by colored borders. {' '}
+          <span className="text-md text-red-500"> RED: </span>Default
+          <span className="text-md text-green-500"> Green: </span>Live
         </p>
         {/* main form data */}
         <hr />

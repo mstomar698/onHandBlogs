@@ -1,7 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { person } from '../blog/default-blog-data';
-import Icon from './cross.png';
+import Icon from '../../assets/social-cons/twit.png';
+import Icon2 from '../../assets/social-cons/inst.png';
+import Icon3 from '../../assets/social-cons/git.png';
+import Icon4 from '../../assets/social-cons/link.png';
+import Icon5 from '../../assets/social-cons/up.png';
+
 export const Footer = ({ person_details, twitter, instagram }) => {
   return (
     <div className="flex flex-row max-sm:flex-col mt-8 bg-gray-800 items-start border-4 border-solid rounded-t-lg border-red-500 mx-auto sm:mx-4 lg:mx-16 h-full">
@@ -23,23 +28,23 @@ export const Footer = ({ person_details, twitter, instagram }) => {
           </li>
           <li>
             {' '}
-            <Link className="" href={`http://linkedin.in/${twitter}`}>
-              <Image src={Icon} alt="v1" height={40} width={40} />
-            </Link>
-          </li>
-          <li>
-            <Link className="" href={`http://github.com/${twitter}`}>
-              <Image src={Icon} alt="v1" height={40} width={40} />
-            </Link>
-          </li>
-          <li>
             <Link className="" href={`http://instagram.com/${instagram}`}>
-              <Image src={Icon} alt="v1" height={40} width={40} />
+              <Image src={Icon2} alt="v1" height={40} width={40} />
             </Link>
           </li>
           <li>
-            <Link className="" href="/home">
-              <Image src={Icon} alt="v1" height={40} width={40} />
+            <Link className="" href={`http://github.com/mstomar698`}>
+              <Image src={Icon3} alt="v1" height={40} width={40} />
+            </Link>
+          </li>
+          <li>
+            <Link className="" href={`http://linkedin.com/${instagram}`}>
+              <Image src={Icon4} alt="v1" height={40} width={40} />
+            </Link>
+          </li>
+          <li>
+            <Link className="" href="/">
+              <Image src={Icon5} alt="v1" height={40} width={40} />
             </Link>
           </li>
         </ul>

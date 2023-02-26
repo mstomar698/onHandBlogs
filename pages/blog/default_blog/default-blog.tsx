@@ -1,4 +1,4 @@
-import Blog_bg from './bg-image.jpg';
+import Blog_bg from '../../../assets/galaxy-bg.jpg';
 import Image from 'next/image';
 import { Footer, Navbar } from '../../components';
 import ContactForm from '../../components/contact-from';
@@ -6,7 +6,7 @@ import { person } from '../default-blog-data';
 
 export const Default_Blog = () => {
   return (
-    <div className="p-4 border-4 border-solid border-red-500 mt-2">
+    <div className="backdrop-blur-xl bg-white/30  p-4 border-4 border-solid border-red-500 ">
       {/**Add following for image OR blur-effect "backdrop-blur-xl bg-white/30 blog_body" */}
       {/* Navbar Section */}
       <Navbar person_details={person.name} />
@@ -19,25 +19,20 @@ export const Default_Blog = () => {
                 Welcome to{' '}
               </span>
               <span className="text-5xl max-sm:text-3xl uppercase lg:mt-1 text-purple-600 font-bold">
-                Mayank's Travel Blog
+                {person.name}'s <br /> Travel Blog
               </span>
             </div>
             <div className="flex flex-row h-full mt-1 p-2 w-full">
               <div className="flex flex-col text-3xl max-sm:text-xl space-y-2 text-purple-700 w-3/5 h-full">
                 About Me
-                <ul className="text-md text-purple-400 text-left justify-between items-end bg-black h-full w-full space-y-0 border-solid border-4 border-black rounded-lg px-2">
-                  <li>det1</li>
-                  <li>det2</li>
-                  <li>det3</li>
-                  <li>det4</li>
-                  <li>det5</li>
-                  <li>det4</li>
+                <ul className="text-md text-purple-400 text-xl text-left justify-between items-end bg-black h-full w-full space-y-0 border-solid border-4 border-black rounded-lg p-2">
+                  <li>{person.about}</li>
                 </ul>
               </div>
               <div className="flex flex-col text-3xl max-sm:text-xl p-8 max-sm:p-2 text-purple-700 w-3/5 h-full text-right">
                 Current Tour
                 <span className="text-3xl md:text-5xl h-full mt-2 lg:text-5xl border-2 border-solid border-green-400 overflow justify-end items-end text-purple-400 text-right  max-sm:px-4">
-                  current tour location
+                  {person.place}
                 </span>
               </div>
             </div>
@@ -62,15 +57,22 @@ export const Default_Blog = () => {
           </div>
           <div className="flex flex-col w-full items-center justify-between p-4">
             <span className="text-3xl maxc-sm:text-xl max-md:text-xl text-purple-700 font-bold uppercase lg:m-4">
-              Place head
+              {person.place}
             </span>
             <ul className="text-md text-purple-400 text-left justify-between items-end bg-black h-full w-full p-2 space-y-2 border-solid border-4 border-black rounded-lg max-sm:p-4  max-sm:px-8 px-16 lg:p-8">
-              <li>det1</li>
-              <li>det2</li>
-              <li>det3</li>
-              <li>det4</li>
-              <li>det5</li>
-              <li>det4</li>
+              {person.about}
+              {person.about}
+              {person.about}
+              {person.about}
+              {person.about}
+              {person.about}
+              {person.about}
+              {person.about}
+              {person.about}
+              {person.about}
+              {person.about}
+              {person.about}
+              {person.about}
             </ul>
           </div>
         </div>
@@ -93,12 +95,12 @@ export const Default_Blog = () => {
               Storie head
             </span>
             <ul className="text-md text-purple-400 text-left justify-between items-end bg-black  h-full w-full p-2 space-y-2 border-solid border-4 border-black rounded-lg px-4">
-              <li>det1</li>
-              <li>det2</li>
-              <li>det3</li>
-              <li>det4</li>
-              <li>det5</li>
-              <li>det4</li>
+              {person.about}
+              {person.about}
+              {person.about}
+              {person.about}
+              {person.about}
+              {person.about}
             </ul>
           </div>
         </div>
@@ -115,12 +117,12 @@ export const Default_Blog = () => {
               Storie head
             </span>
             <ul className="text-md text-purple-400 text-left justify-between items-end bg-black  h-full w-full p-2 space-y-2 border-solid border-4 border-black rounded-lg px-4">
-              <li>det1</li>
-              <li>det2</li>
-              <li>det3</li>
-              <li>det4</li>
-              <li>det5</li>
-              <li>det4</li>
+              {person.about}
+              {person.about}
+              {person.about}
+              {person.about}
+              {person.about}
+              {person.about}
             </ul>
           </div>
         </div>
@@ -139,7 +141,7 @@ export const Default_Blog = () => {
             className="rounded-lg"
           />
           <span className="text-xl text-center text-purple-700 font-bold m-1">
-            Single Image
+            {person.twitter}
           </span>
         </div>
         <div className="flex flex-col w-full h-full m-1">
@@ -151,7 +153,7 @@ export const Default_Blog = () => {
             className="rounded-lg"
           />
           <span className="text-xl text-center text-purple-700 font-bold m-1">
-            Video details
+            {person.instagram}
           </span>
         </div>
         <div className="flex flex-col w-full h-full m-1">
@@ -163,7 +165,7 @@ export const Default_Blog = () => {
             className="rounded-lg"
           />
           <span className="text-xl text-center text-purple-700 font-bold m-1">
-            Video details
+            {person.instagram}
           </span>
         </div>
         <div className="flex flex-col w-full h-full m-1">
@@ -175,7 +177,7 @@ export const Default_Blog = () => {
             className="rounded-lg"
           />
           <span className="text-xl text-center text-purple-700 font-bold m-1">
-            Single Image
+            {person.twitter}
           </span>
         </div>
       </div>

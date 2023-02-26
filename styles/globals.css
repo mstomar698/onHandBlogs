@@ -30,7 +30,7 @@ body::-webkit-scrollbar-track {
   margin: 0;
   padding: 1rem;
   padding-bottom: 0;
-  background-image: url('../assets/bg-image.jpg');
+  background-image: url('../assets/flag-bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -50,9 +50,21 @@ body::-webkit-scrollbar-track {
 .blog_body {
   /* height: 100%;
   width: 100%; */
-  background-image: url('../assets/bg-image.jpg');
+  background-image: url('../assets/dragon-bg.jpg');
   background-size: cover;
   z-index: 10;
   background-repeat: no-repeat;
   background-position: center center;
 }
+.blog_main_body {
+  /* height: 100%;
+  width: 100%; */
+  background-image: url('../assets/galaxy-bg.jpg');
+  background-size: cover;
+  z-index: 10;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+
+

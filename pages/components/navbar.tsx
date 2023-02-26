@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import MenuIcon from './file.png';
-import CloseIcon from './cross.png';
+import MenuIcon from '../../assets/social-cons/menu.png';
+import CloseIcon from '../../assets/social-cons/cross.png';
 import Image from 'next/image';
+import { signOut } from 'next-auth/react';
 
 export const Navbar = ({ person_details }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -9,9 +10,8 @@ export const Navbar = ({ person_details }) => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-
   return (
-    <div className="flex flex-row border-4 border-solid rounded-lg justify-between border-red-500 mx-auto sm:mx-4 lg:mx-16 h-full p-1">
+    <div className="backdrop-blur-xl bg-white/30 flex flex-row border-4 border-solid rounded-lg justify-between border-red-500 mx-auto sm:mx-4 lg:mx-16 h-full p-1">
       <div className="flex justify-center items-center w-full text-center ">
         <a href="/" className="flex items-center w-4/5">
           <span className="text-xl font-bold w-full text-green-400 ">
@@ -47,6 +47,14 @@ export const Navbar = ({ person_details }) => {
           >
             Contact
           </a>
+          <a>
+            <button
+              className="block border-solid bg-green-400 hover:bg-green-700 hover:text-red-400 border-green-600 border-2 rounded-lg p-0.5 text-purple-500 text-lg mb-2"
+              onClick={() => signOut()}
+            >
+              SignOut
+            </button>
+          </a>
         </div>
 
         <div className="md:hidden relative h-full flex items-center">
@@ -71,7 +79,7 @@ export const Navbar = ({ person_details }) => {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="flex flex-col justify-center md:hidden fixed  lg:relative -top-0 -right-0 w-full h-screen overflow-hidden backdrop-blur-xl bg-black/80 items-center">
+        <div className="flex flex-col justify-center md:hidden fixed  lg:relative -top-0 -right-0 w-full h-screen overflow-hidden backdrop-blur-xl bg-black  items-center">
           <a
             title="cross"
             href="/"
@@ -108,6 +116,14 @@ export const Navbar = ({ person_details }) => {
             className="block text-purple-700 text-lg hover:text-white mb-2"
           >
             Contact
+          </a>
+          <a>
+            <button
+              className="block border-solid bg-green-500 hover:bg-green-700 hover:text-red-400 border-green-600 border-2 rounded-lg p-0.5 text-purple-500 text-lg mb-2"
+              onClick={() => signOut()}
+            >
+              SignOut
+            </button>
           </a>
         </div>
       )}

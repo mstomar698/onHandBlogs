@@ -1,10 +1,11 @@
 import Blog_bg from '../../../assets/galaxy-bg.jpg';
 import Image from 'next/image';
-import { Footer, Navbar } from '../../components';
 import ContactForm from '../../components/contact-from';
-import { person } from '../default-blog-data';
+import {person} from '../../../static/default-blog-data';
+import Footer from '@/pages/components/footer';
+import Navbar from '@/pages/components/navbar';
 
-export const Default_Blog = () => {
+const Default_Blog = () => {
   return (
     <div className="backdrop-blur-xl bg-white/30  p-4 border-4 border-solid border-red-500 ">
       {/**Add following for image OR blur-effect "backdrop-blur-xl bg-white/30 blog_body" */}
@@ -202,3 +203,5 @@ export const Default_Blog = () => {
     </div>
   );
 };
+
+export default Default_Blog;

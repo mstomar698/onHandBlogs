@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 
-export const Form = () => {
+const Form = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -182,3 +182,5 @@ export const Form = () => {
     </div>
   );
 };
+
+export default Form;

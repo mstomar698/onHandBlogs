@@ -1,19 +1,20 @@
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
-import { Footer, Navbar } from './components';
-import { Main } from './blog/main';
-import { Form } from './form/form';
+import Main from './blog/main';
+import Form from './form/form';
 import clientPromise from '../lib/mongodb';
 import { InferGetServerSidePropsType } from 'next';
 import { signIn, useSession } from 'next-auth/react';
-import { person } from './blog/default-blog-data';
+import { person } from '../static/default-blog-data';
 // combined file to download
 // import { Main_Comb } from './blog/to_downlaod/main_compbined';
 // import * as fs from 'fs';
 import fs from 'fs';
 import { transformSync } from '@babel/core';
 import { saveAs } from 'file-saver';
-import { textData } from './blog/to_downlaod/travel_blog';
+import textData from '../static/travel_blog';
+import Navbar from './components/navbar';
+import Footer from './components/footer';
 
 const inter = Inter({ subsets: ['latin'] });
 const jsxFilePath = '../blog/to_download/main_combined.tsx';
@@ -34,10 +35,10 @@ export async function getServerSideProps(context: any) {
       const jsxFileContent = fs.readFileSync(jsxFilePath, {
         encoding: 'utf-8',
       });
-      const { code } = transformSync(jsxFileContent, {
+      const code = transformSync(jsxFileContent, {
         presets: ['@babel/preset-react'],
       });
-      fs.writeFileSync(textFilePath, code);
+      fs.writeFileSync(textFilePath, code as any);
     };
     return {
       props: {

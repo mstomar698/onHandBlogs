@@ -1,5 +1,4 @@
 import Blog_bg from '../../assets/galaxy-bg.jpg';
-import { Footer, Navbar } from '../components';
 import Image from 'next/image';
 import ContactForm from '../components/contact-from';
 import { useEffect, useState } from 'react';
@@ -14,13 +13,15 @@ interface FormData {
 }
 
 import humanImage from '../../assets/galaxy-bg.jpg';
-import { Default_Blog } from './default_blog/default-blog';
+import Default_Blog  from './default_blog/default-blog';
+import Navbar from '../components/navbar';
+import Footer from '../components/footer';
 
 /**
  * @param {any} details
  * @returns
  */
-export const Main = ({ details }: any) => {
+const Main = ({ details }: any) => {
   // NOTE: details_form_form will we used later to replace details dynamically.
   const details_from_form = details;
   const [formData, setFormData] = useState<FormData[]>([]);
@@ -261,3 +262,5 @@ export const Main = ({ details }: any) => {
     </>
   );
 };
+
+export default Main;

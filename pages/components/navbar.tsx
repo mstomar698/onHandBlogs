@@ -4,7 +4,7 @@ import CloseIcon from '../../assets/social-cons/cross.png';
 import Image from 'next/image';
 import { signOut } from 'next-auth/react';
 
-export const Navbar = ({ person_details }) => {
+const Navbar = ({ person_details }: any) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -131,6 +131,7 @@ export const Navbar = ({ person_details }) => {
   );
 };
 
+export default Navbar;
 // // // // export const Navbar = () => {
 // // // //   return (
 // // // //     // <div className="flex flex-row border-4 border-solid rounded-lg justify-between  border-red-500 mx-auto sm:mx-4 lg:mx-16 h-full">

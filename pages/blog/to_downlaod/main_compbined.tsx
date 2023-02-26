@@ -6,14 +6,14 @@ import MenuIcon from '../../../assets/social-cons/menu.png';
 import CloseIcon from '../../../assets/social-cons/cross.png';
 import { signOut } from 'next-auth/react';
 import Link from 'next/link';
-import { person } from './default_values';
+import {person} from '../../../static/default_values';
 import Icon from '../../../assets/social-cons/twit.png';
 import Icon2 from '../../../assets/social-cons/inst.png';
 import Icon3 from '../../../assets/social-cons/git.png';
 import Icon4 from '../../../assets/social-cons/link.png';
 import Icon5 from '../../../assets/social-cons/up.png';
 import humanImage from '../../../assets/galaxy-bg.jpg';
-import { Default_Blog } from '../default_blog/default-blog';
+import Default_Blog from '../default_blog/default-blog';
 
 interface FormData {
   name: string;
@@ -28,7 +28,7 @@ interface FormData {
  * @param {any} details
  * @returns
  */
-export const Main_Comb = ({ details }: any) => {
+const Main_Comb = ({ details }: any) => {
   // NOTE: details_form_form will we used later to replace details dynamically.
   const details_from_form = details;
   const [formData, setFormData] = useState<FormData[]>([]);
@@ -472,3 +472,4 @@ export const Main_Comb = ({ details }: any) => {
     </>
   );
 };
+export default Main_Comb;

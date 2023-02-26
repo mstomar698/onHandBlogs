@@ -1,4 +1,4 @@
-import clientPromise from '../../lib/mongodb';
+import clientPromise from '../lib/mongodb';
 
 export default async (req: Request, res: Response) => {
   try {
@@ -9,7 +9,7 @@ export default async (req: Request, res: Response) => {
     // const posts = await db.collection("posts").find({}).limit(20).toArray();
     const posts = await collection.find().toArray();
 
-    res.json(posts);
+    res.json();
     console.log(posts);
   } catch (e: any) {
     console.error(e);

@@ -57,13 +57,16 @@ body::-webkit-scrollbar-track {
   background-position: center center;
 }
 .blog_main_body {
-  /* height: 100%;
-  width: 100%; */
+  margin: 0;
+  padding: 1rem;
+  padding-bottom: 0;
+  /* width: 100%; */
   background-image: url('../assets/galaxy-bg.jpg');
-  background-size: cover;
   z-index: 10;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  background-attachment: fixed;
 }
 
 

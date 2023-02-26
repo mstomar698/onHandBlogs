@@ -1,4 +1,4 @@
-export const textData = `
+const textData = `
 # mstomar698
 
 
@@ -630,3 +630,4 @@ body::-webkit-scrollbar-track {
 ______________________________________________________________________________
 
 `;
+export default textData;

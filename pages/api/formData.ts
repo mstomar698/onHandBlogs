@@ -7,7 +7,7 @@ export default async (req: Request, res: Response) => {
     const collection = client.db().collection('posts');
 
     // const posts = await db.collection("posts").find({}).limit(20).toArray();
-    const posts = await collection.find({}).limit(20).toArray();
+    const posts = await collection.find().toArray();
 
     res.json(posts);
     console.log(posts);

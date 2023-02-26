@@ -3,7 +3,7 @@ import MenuIcon from './file.png';
 import CloseIcon from './cross.png';
 import Image from 'next/image';
 
-export const Navbar = () => {
+export const Navbar = ({ person_details }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -11,11 +11,11 @@ export const Navbar = () => {
   };
 
   return (
-    <div className="flex flex-row border-4 border-solid rounded-lg justify-between  border-red-500 mx-auto sm:mx-4 lg:mx-16 h-full p-1">
+    <div className="flex flex-row border-4 border-solid rounded-lg justify-between border-red-500 mx-auto sm:mx-4 lg:mx-16 h-full p-1">
       <div className="flex justify-center items-center w-full text-center ">
         <a href="/" className="flex items-center w-4/5">
           <span className="text-xl font-bold w-full text-green-400 ">
-            Mayank's Travel Blog
+            {person_details}'s Travel Blog
           </span>
         </a>
 
@@ -38,9 +38,7 @@ export const Navbar = () => {
           >
             Stories
           </a>
-          <a
-            className="block text-purple-400 text-lg hover:text-white mb-2"
-          >
+          <a className="block text-purple-400 text-lg hover:text-white mb-2">
             Gallery
           </a>
           <a

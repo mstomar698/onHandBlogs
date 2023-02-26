@@ -3,16 +3,26 @@ import clientPromise from '../../lib/mongodb';
 
 interface PostData {
   name: string;
+  email: string;
+  about: string;
+  place: string;
+  twitter: string;
+  instagram: string;
 }
 
 export default async (req: Request, res: Response): Promise<void> => {
   try {
     const client = await clientPromise;
     const collection = client.db().collection<PostData>('posts');
-    const { name } = req.body;
+    const { name, email, place, about, instagram, twitter } = req.body;
 
     const post = await collection.insertOne({
       name,
+      email,
+      place,
+      about,
+      twitter,
+      instagram,
     });
 
     res.status(200).json({ message: 'Data saved successfully', data: post });
